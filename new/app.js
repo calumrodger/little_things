@@ -6,7 +6,7 @@ function getRandomWord() {
 
 function addRandomWord() {
     const word = getRandomWord();
-    const text = document.querySelector("body");
+    const text = document.querySelector(".poem");
     text.textContent = `you are a small sailor \n sailing on a boat \n going out to sea \n you are a ${word} sailor`
 }
   document.addEventListener('DOMContentLoaded', () => {
