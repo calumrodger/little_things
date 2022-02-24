@@ -39,16 +39,18 @@
     text.textContent = `${word}`
   }
 
-    document.addEventListener('DOMContentLoaded', () => getRandomWord());
+    document.addEventListener('DOMContentLoaded', () => {
+        getRandomWord();
+        setInterval(getRandomWord, 5000)});
     
-    document.getElementById("#word").addEventListener('click', () => getRandomWord());
+    document.getElementById('word').addEventListener('click', () => getRandomWord());
 
 </script>
         <div class="poem">
             you are a small sailor 
             sailing on a boat 
             going out to sea 
-            you are a <span id="word" onclick=getRandomWord()></span> sailor
+            you are a <span id="word" onclick={newWord}>word</span> sailor
         </div>
 </body>
 </html>
