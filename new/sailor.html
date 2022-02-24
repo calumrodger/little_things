@@ -15,15 +15,16 @@
     left: 0;
     line-height: 20px;
     margin-top: -300px;
+    margin-left: 45%;
     position: fixed;
-    text-align: center;
+    text-align: left;
     top: 50%;
     width: 100%;
     font-weight: bold;
     white-space: pre-line;
 }
 
-.word {
+#word {
     font-size: xx-large;
 }
 
@@ -38,20 +39,16 @@
     text.textContent = `${word}`
   }
 
-    document.addEventListener('DOMContentLoaded', () => {
-        getRandomWord();
-        });
-
-    document.getElementById("#word").addEventListener("click", () => {
-        getRandomWord();
-        });
+    document.addEventListener('DOMContentLoaded', () => getRandomWord());
+    
+    const onClick = document.getElementById("#word").addEventListener('click', () => getRandomWord());
 
 </script>
         <div class="poem">
             you are a small sailor 
             sailing on a boat 
             going out to sea 
-            you are a <span type="button" id="word" onclick=getRandomWord()></span> sailor
+            you are a <span id="word" onclick=getRandomWord()></span> sailor
         </div>
 </body>
 </html>
