@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sailor</title>
+    <style>
+
+* {
+    cursor: default;
+}
+.poem {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    left: 0;
+    line-height: 20px;
+    margin-top: -300px;
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+    font-weight: bold;
+    white-space: pre-line;
+}
+
+.word {
+    font-size: xx-large;
+}
+
+    </style>
+</head>
+<body>
+<script>
+    function getRandomWord() {
+    let words = ["tiny", "minute", "miniscule", "microscopic", "small", "little", "wee", "remote", "puny", "cute"];
+    let word = words[Math.floor(Math.random() * words.length)];
+    const text = document.querySelector("#word")
+    text.textContent = `${word}`
+  }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getRandomWord();
+        });
+
+    document.getElementById("#word").addEventListener("click", () => {
+        getRandomWord();
+        });
+
+</script>
+        <div class="poem">
+            you are a small sailor 
+            sailing on a boat 
+            going out to sea 
+            you are a <span type="button" id="word" onclick=getRandomWord()></span> sailor
+        </div>
+</body>
+</html>
