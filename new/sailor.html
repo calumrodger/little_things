@@ -31,26 +31,44 @@
     </style>
 </head>
 <body>
-<script>
-    function getRandomWord() {
-    let words = ["tiny", "minute", "miniscule", "microscopic", "small", "little", "wee", "remote", "puny", "cute"];
-    let word = words[Math.floor(Math.random() * words.length)];
-    const text = document.querySelector("#word")
-    text.textContent = `${word}`
-  }
 
-    document.addEventListener('DOMContentLoaded', () => {
-        getRandomWord();
-        setInterval(getRandomWord, 5000)});
     
-    document.getElementById('word').addEventListener('click', () => getRandomWord());
 
-</script>
         <div class="poem">
             you are a small sailor 
             sailing on a boat 
             going out to sea 
-            you are a <span id="word" onclick={newWord}>word</span> sailor
+            you are a <span id="word">word</span> sailor
         </div>
+
+        <script>
+            function getRandomWord() {
+            let words = ["tiny", "minute", "miniscule", "microscopic", "small", "little", "wee", "remote", "puny", "cute"];
+            let word = words[Math.floor(Math.random() * words.length)];
+            const text = document.querySelector("#word")
+            text.textContent = `${word}`
+          }
+        
+
+               
+                document.addEventListener('DOMContentLoaded', function() {
+                    setInterval(getRandomWord, 5000);
+    const text = document.querySelector("#word");
+    function getRandomWord() {
+        const words = ["tiny", "minute", "miniscule", "microscopic", "small", "little", "wee", "remote", "puny", "cute"];
+        let word;
+        do {
+            word = words[Math.floor(Math.random() * words.length)];
+        } while (word === text.textContent)
+        text.textContent = word;
+    }
+    text.addEventListener('click', getRandomWord);
+    getRandomWord();
+});
+
+        
+        </script>
+
+        
 </body>
 </html>

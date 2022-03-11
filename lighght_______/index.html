@@ -6,9 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The 'lighght' Going On and Off</title>
     <link rel="stylesheet" href="style.css"/>
-    <script src="app.js"></script>
+    <!-- <script src="app.js"></script> -->
 </head>
 <body>
+    <script>
+        function changeText() {
+      const lighght = document.querySelector(".lighght");
+        if (lighght.textContent === "lighght") {
+            lighght.textContent = ("");
+      } else {
+            (lighght.textContent) = "lighght";
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        setInterval(changeText, 5000)
+        });
+    </script>
     <div class="lighght">
         lighght
     </div>
